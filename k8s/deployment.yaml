@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spam-detection-deployment
+  labels:
+    app: spam-detection
+spec:
+  replicas: 3  # Number of instances of the application to deploy
+  selector:
+    matchLabels:
+      app: spam-detection
+  template:
+    metadata:
+      labels:
+        app: spam-detection
+    spec:
+      containers:
+      - name: spam-detection
+        image: manuagasimani/django-app:latest
+        ports:
+        - containerPort: 8000
+        
+        # Add any additional environment variables, such as database credentials
+ 
