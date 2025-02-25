@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     echo "Cloning the repository"
-                    git branch: 'main', url: 'https://github.com/manuCprogramming/spam-detection-project.git'
+                    git branch: 'main', url: 'https://github.com/UnDeFined02/spam-project'
                 }
             }
         }
