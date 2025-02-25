@@ -77,8 +77,4 @@ pipeline {
             }
         }
     }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> f8aae2d (Updated project files and fixed configurations)
+}  # ✅ Remove merge conflict markers and keep this closing bracket
