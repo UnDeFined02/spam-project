@@ -5,6 +5,9 @@ import dj_database_url
 # Load environment variables
 load_dotenv()
 
+# Define BASE_DIR
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Get secret key from environment
 SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')  # Never expose this in code
 
@@ -40,7 +43,7 @@ ROOT_URLCONF = 'SMD.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -57,7 +60,7 @@ WSGI_APPLICATION = 'SMD.wsgi.application'
 
 # Database Configuration
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3'))
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL', f'sqlite:///{os.path.join(BASE_DIR, "db.sqlite3")}'))
 }
 
 # Password validation
@@ -77,3 +80,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Spam/static')]
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
