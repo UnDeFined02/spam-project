@@ -2,7 +2,7 @@ pipeline {
     agent any  // Run directly on the Jenkins host machine
 
     environment {
-        DOCKER_IMAGE = "manuagasimani/django-app:latest"  // Docker image name
+        DOCKER_IMAGE = "undefined014/django-app:latest"  // Docker image name
         REGISTRY_CREDENTIALS = credentials('docker')  // Docker credentials from Jenkins
     }
 
