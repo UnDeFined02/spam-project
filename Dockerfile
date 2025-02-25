@@ -1,5 +1,5 @@
 # Use an official lightweight Python image
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -17,5 +17,9 @@ COPY . /app/
 EXPOSE 8000
 
 # Run the application using Gunicorn (better for production)
+<<<<<<< HEAD
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "Spam_Project.wsgi:application"]
 
+=======
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "Spam_Project.wsgi:application"]
+>>>>>>> f8aae2d (Updated project files and fixed configurations)

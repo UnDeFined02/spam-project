@@ -19,7 +19,11 @@ spec:
         image: undefined014/django-app:latest
         ports:
         - containerPort: 8000
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> f8aae2d (Updated project files and fixed configurations)
         # Resource limits to prevent overuse
         resources:
           limits:
@@ -51,4 +55,8 @@ spec:
           valueFrom:
             secretKeyRef:
               name: spam-detection-secrets
+<<<<<<< HEAD
               key: database_url
+=======
+              key: database_url
+>>>>>>> f8aae2d (Updated project files and fixed configurations)

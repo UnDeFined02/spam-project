@@ -77,4 +77,8 @@ pipeline {
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f8aae2d (Updated project files and fixed configurations)
