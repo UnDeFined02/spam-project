@@ -1,21 +1,21 @@
-# Use an official Python runtime as the base image
+# Use an official lightweight Python image
 FROM python:3.9-slim
-#FROM python:3.9.18-slim
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements.txt file
+# Copy only requirements first to leverage Docker cache
 COPY requirements.txt /app/
 
-# Install the dependencies from requirements.txt
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project (including the 'Spam Detection' folder) into the container
+# Copy the rest of the application
 COPY . /app/
 
-# Expose the port Django will run on
+# Expose port 8000 for the application
 EXPOSE 8000
 
-# Default command to run the Django development server
-CMD ["python", "Spam Project/manage.py", "runserver", "0.0.0.0:8000"]
+# Run the application using Gunicorn (better for production)
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "Spam_Project.wsgi:application"]
+
