@@ -8,6 +8,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8000  # Port where Django app is running inside container
-  type: LoadBalancer  # Exposes the service to the internet (or use ClusterIP for internal access only)
- 
+      targetPort: 8000
+  type: ClusterIP  # Change to LoadBalancer or NodePort if necessary
