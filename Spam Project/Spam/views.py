@@ -25,8 +25,8 @@ def index(request):
         un = request.POST.get('username')
         up = request.POST.get('password')
 
-        if un == "manu" and up == "manu":
-            request.session['authdetails'] = "manu"
+        if un == "maruf" and up == "Maruf@123":
+            request.session['authdetails'] = "maruf"
             return render(request, 'index.html')
         else:
             return render(request, 'auth.html')
@@ -40,7 +40,7 @@ def index(request):
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def checkSpam(request):
     if request.method == "POST":
-        if request.session.get('authdetails') == "manu":
+        if request.session.get('authdetails') == "maruf":
             algo = request.POST.get("algo")
             rawData = request.POST.get("rawdata")
 
