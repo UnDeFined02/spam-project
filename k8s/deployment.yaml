@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: spam-detection
-        image: manuagasimani/django-app:latest
+        image: undefined014/django-app:latest
         ports:
         - containerPort: 8000
         
