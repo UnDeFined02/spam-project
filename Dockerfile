@@ -17,4 +17,5 @@ COPY . /app/
 EXPOSE 8000
 
 # Run the application using Gunicorn (better for production)
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "Spam_Project.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "SMD.wsgi"]
+
